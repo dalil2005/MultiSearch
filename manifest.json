@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "MultiSearch",
+  "version": "1.0",
+  "description": "Search multiple platforms simultaneously",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "MultiSearch"
+  },
+  "permissions": ["storage", "tabs"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

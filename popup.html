@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiSearch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="multi">Multi</span><span class="search">Search</span></h1>
+            <p class="subtitle">Search everywhere at once</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-wrapper">
+                <input 
+                    type="search"
+                    id="searchQuery" 
+                    placeholder="What are you looking for?"
+                    autocomplete="chrome-off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                >
+                <button id="searchBtn" class="search-button">
+                    🔍 Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Platforms Section -->
+        <div class="platforms-section">
+            <div class="section-header">
+                <h2>Search Platforms</h2>
+                <button id="addPlatformBtn" class="icon-button" title="Add platform">
+                    ＋
+                </button>
+            </div>
+            
+            <div id="platformsList" class="platforms-list">
+                <!-- Platforms loaded here -->
+            </div>
+        </div>
+
+        <!-- Add Platform Modal -->
+        <div id="platformModal" class="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Add Platform</h2>
+                <div class="form-group">
+                    <label for="platformName">Platform Name</label>
+                    <input type="text" id="platformName" placeholder="e.g., Google">
+                </div>
+                <div class="form-group">
+                    <label for="platformUrl">Search URL</label>
+                    <input type="text" id="platformUrl" 
+                           placeholder="https://www.example.com/search?q=QUERY">
+                    <small class="hint">Include <code>QUERY</code> where search term goes</small>
+                </div>
+                <div class="modal-buttons">
+                    <button id="cancelBtn" class="secondary-btn">Cancel</button>
+                    <button id="savePlatformBtn" class="primary-btn">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

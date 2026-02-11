@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 400px;
+    background: #f8f9fa;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.multi {
+    color: #00a958;
+    font-weight: 700;
+}
+
+.search {
+    color: #1fbde8;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Search Section */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+#searchQuery {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    transition: border 0.3s;
+}
+
+#searchQuery:focus {
+    outline: none;
+    border-color: #1fbde8;
+}
+
+/* Remove browser styles for search input */
+#searchQuery[type="search"]::-webkit-search-decoration,
+#searchQuery[type="search"]::-webkit-search-cancel-button,
+#searchQuery[type="search"]::-webkit-search-results-button,
+#searchQuery[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+.search-button {
+    background: linear-gradient(135deg, #00a958, #1fbde8);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.2s;
+}
+
+.search-button:hover {
+    transform: translateY(-1px);
+}
+
+/* Platforms Section */
+.platforms-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 16px;
+    color: #333;
+}
+
+.icon-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #f0f2f5;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.icon-button:hover {
+    background: #1fbde8;
+    color: white;
+}
+
+/* Platforms List */
+.platforms-list {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.platforms-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.platforms-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+
+.platforms-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+}
+
+.platform-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: #fafafa;
+    transition: all 0.2s;
+}
+
+.platform-item:hover {
+    border-color: #1fbde8;
+    background: #f5fbff;
+}
+
+.platform-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #00a958;
+}
+
+.platform-info {
+    flex: 1;
+}
+
+.platform-name {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.platform-url {
+    font-size: 11px;
+    color: #666;
+    font-family: monospace;
+    word-break: break-all;
+}
+
+.platform-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.platform-actions button {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.platform-actions button:hover {
+    background: #f0f0f0;
+}
+
+.edit-btn {
+    color: #1fbde8;
+}
+
+.delete-btn {
+    color: #ff6b6b;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    max-width: 90%;
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1fbde8;
+}
+
+.hint {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+.hint code {
+    background: #f0f0f0;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #00a958, #1fbde8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: #f0f2f5;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Status */
+.status {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00a958;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.status.show {
+    opacity: 1;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 30px 20px;
+    color: #666;
+}
+
+.empty-state p {
+    margin-bottom: 15px;
+}
+
+.add-first-btn {
+    background: linear-gradient(135deg, #00a958, #1fbde8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
